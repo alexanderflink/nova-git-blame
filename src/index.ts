@@ -2,10 +2,6 @@ const path = nova.path
 
 const REQUEST_TIMEOUT = 3000
 
-function activate() {}
-
-function deactivate() {}
-
 function sendNotificationRequest(notificationRequest: NotificationRequest) {
   nova.notifications.add(notificationRequest)
 
@@ -16,12 +12,7 @@ function cancelNotificationRequest(notificationRequest: NotificationRequest) {
   nova.notifications.cancel(notificationRequest.identifier)
 }
 
-// Invoked by the "Foobar" command
 nova.commands.register('nova-git-blame.blame', (editor: TextEditor) => {
-  // const process = new Process('/usr/bin/env', {
-  //   args: ['git', 'blame', ]
-  // })
-
   const lines: string[] = []
 
   const notification = new NotificationRequest('git-blame')
@@ -60,7 +51,7 @@ nova.commands.register('nova-git-blame.blame', (editor: TextEditor) => {
       lines.push(line.replace(document.eol, ''))
     })
 
-    process.onDidExit((status) => {
+    process.onDidExit(() => {
       const author = lines[1].split(' ').slice(1).join(' ')
       const email = lines[2].split(' ').slice(1).join(' ')
       const time = lines[3].split(' ').slice(1).join(' ')
@@ -81,14 +72,4 @@ nova.commands.register('nova-git-blame.blame', (editor: TextEditor) => {
   } else {
     notification.body = 'Cannot git blame remote or unsaved documents!'
   }
-
-  // Begin an edit session
-  const position = editor.selectedRange.start
-
-  // editor.edit(function (e) {
-  //   // Insert the string "Foobar"
-  //   e.insert(position, 'Foobar')
-  // })
 })
-
-export { activate, deactivate }
