@@ -1,0 +1,23 @@
+{
+  "identifier": "alexanderflink.gitblame",
+  "name": "git-blame",
+  "organization": "Alexander Flink",
+  "description": "Git blame command for Nova.",
+  "version": "1.0",
+  "categories": ["commands"],
+  "main": "index.js",
+  "activationEvents": ["onCommand:nova-git-blame.blame"],
+  "entitlements": {
+    "process": true
+  },
+  "commands": {
+    "editor": [
+      {
+        "title": "Git blame",
+        "command": "nova-git-blame.blame",
+        "shortcut": "cmd-shift-b",
+        "when": "editorHasFocus"
+      }
+    ]
+  }
+}

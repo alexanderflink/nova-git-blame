@@ -1,0 +1,32 @@
+{
+  "name": "nova-git-blame",
+  "version": "1.0.0",
+  "description": "Git blame command for Nova.",
+  "main": "index.js",
+  "dependencies": {
+    "compare-versions": "^3.6.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "@tsconfig/node16": "^1.0.2",
+    "@tsconfig/recommended": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "rollup": "^2.61.1",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "typescript": "^4.5.4"
+  },
+  "scripts": {
+    "dev": "rollup -c rollup.config.main.js --watch",
+    "build": "rollup -c rollup.config.main.js && rm -rf git-blame.novaextension/node_modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "Alexander Flink",
+  "license": "ISC"
+}
