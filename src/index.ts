@@ -87,9 +87,6 @@ nova.commands.register('nova-git-blame.blame', (editor: TextEditor) => {
               const commit = commitOutput[0].replace(document.eol, '')
 
               if (repoUri && commit) {
-                console.log(
-                  `${GITHUB_URL}/${repoUri}/blame/${commit}/${blame.filename}#L${startLine}-L${endLine}`,
-                )
                 nova.openURL(
                   `${GITHUB_URL}/${repoUri}/blame/${commit}/${blame.filename}#L${startLine}-L${endLine}`,
                 )

@@ -6,6 +6,8 @@
   "version": "1.0",
   "categories": ["commands"],
   "main": "index.js",
+  "bugs": "https://github.com/alexanderflink/nova-git-blame/issues",
+  "repository": "https://github.com/alexanderflink/nova-git-blame.git",
   "activationEvents": ["onCommand:nova-git-blame.blame"],
   "entitlements": {
     "process": true

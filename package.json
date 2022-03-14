@@ -21,11 +21,12 @@
   },
   "scripts": {
     "dev": "rollup -c rollup.config.main.js --watch",
-    "build": "rollup -c rollup.config.main.js && rm -rf git-blame.novaextension/node_modules",
+    "build": "rollup -c rollup.config.main.js && rm -rf git-blame.novaextension/node_modules && cp README.md git-blame.novaextension/README.md && cp CHANGELOG.md git-blame.novaextension/CHANGELOG.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/alexanderflink/nova-git-blame"
   },
   "author": "Alexander Flink",
   "license": "ISC"
