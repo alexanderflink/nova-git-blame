@@ -1,6 +1,6 @@
 {
   "identifier": "alexanderflink.gitblame",
-  "name": "git-blame",
+  "name": "Git blame",
   "organization": "Alexander Flink",
   "description": "Git blame command for Nova.",
   "version": "1.0",
